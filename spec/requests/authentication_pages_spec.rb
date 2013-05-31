@@ -148,6 +148,18 @@ describe "Authentication" do
         it { response.should redirect_to(root_path) }
       end
       
+      describe "should not see Delete button for somebody else's micropost" do
+        
+          before do 
+            sign_in wrong_user
+            FactoryGirl.create(:micropost, user: user, content: "foo") 
+            visit user_path(user)
+          end
+          
+          it { should_not have_selector('a', text: "delete") }
+      
+      end
+      
     end
     
     describe "as non-admin user" do

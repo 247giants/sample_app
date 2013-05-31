@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'spec_helper' 
 
 describe "User pages" do
   subject { page }
@@ -66,6 +66,10 @@ describe "User pages" do
 
     it { should have_selector('h1', text: user.name) }
     it { should have_selector('title', text: user.name) }
+    
+    
+    
+    
   end 
   
   
