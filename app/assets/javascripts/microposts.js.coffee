@@ -1,4 +1,6 @@
 updateCountdown = ->
+
+if(jQuery("#micropost_content").val())
   remaining = 140 - jQuery("#micropost_content").val().length
   jQuery(".countdown").text remaining + " characters remaining"
 
